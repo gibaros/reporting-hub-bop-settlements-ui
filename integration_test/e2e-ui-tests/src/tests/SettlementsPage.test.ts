@@ -74,6 +74,10 @@ test.meta({
     amount: '10',
     transfer_id: uuidv4(),
   }];
+  	
+  // debugger;
+  // await t.debug();
+
   await cli.completeTransfers(transfers1);
   const nullWindowQueryParams = { currency: null, participantId: null, state: null, fromDateTime: null, toDateTime: null };
   const openWindows1 = await cli.getSettlementWindows({ ...nullWindowQueryParams, state: "OPEN" });
@@ -114,6 +118,9 @@ test.meta({
       settlementWindows: settlementWindowIds.map((id) => ({ id })),
     },
   );
+
+  // debugger;
+  // await t.debug()
 
   // Get the initiation report, "simulate" some balances returned by the settlement bank, save it
   // as the finalization report.
